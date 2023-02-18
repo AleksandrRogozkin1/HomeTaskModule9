@@ -6,6 +6,52 @@ public class MyLinkedList<E> {
 
     private Node<E> firstNode;
     private Node<E> lastNode;
+    private static class Node<E> {
+        private E element;
+        private MyLinkedList.Node<E> nextElement;
+        private MyLinkedList.Node<E> prevElement;
+
+        Node(){
+
+        }
+
+        Node(MyLinkedList.Node<E> prevElement, E element, MyLinkedList.Node<E> nextElement) {
+            this.element = element;
+            this.nextElement = nextElement;
+            this.prevElement = prevElement;
+        }
+
+        public E getElement() {
+            return element;
+        }
+
+        public void setElement(E element) {
+            this.element = element;
+        }
+
+        public Node<E> getNextElement() {
+            return nextElement;
+        }
+
+        public void setNextElement(Node<E> nextElement) {
+            this.nextElement = nextElement;
+        }
+
+        public Node<E> getPrevElement() {
+            return prevElement;
+        }
+
+        public void setPrevElement(Node<E> prevElement) {
+            this.prevElement = prevElement;
+        }
+
+        @Override
+        public String toString() {
+            return element.toString();
+        }
+
+
+    }
 
 
 
@@ -101,63 +147,18 @@ public class MyLinkedList<E> {
             return "{}";
         }
 
-        StringJoiner res = new StringJoiner(",");
-        res.add(firstNode.toString());
+        StringJoiner result = new StringJoiner(",");
+        result.add(firstNode.toString());
         Node<E> node = firstNode.getNextElement();
         while (node!=null){
-            res.add(node.toString());
+            result.add(node.toString());
             node =  node.getNextElement();
         }
 
-        return "{"+res.toString()+"}";
+        return "{"+result.toString()+"}";
     }
 
 
-    private static class Node<E> {
-        private E element;
-        private MyLinkedList.Node<E> nextElement;
-        private MyLinkedList.Node<E> prevElement;
 
-        Node(){
-
-        }
-
-        Node(MyLinkedList.Node<E> prevElement, E element, MyLinkedList.Node<E> nextElement) {
-            this.element = element;
-            this.nextElement = nextElement;
-            this.prevElement = prevElement;
-        }
-
-        public E getElement() {
-            return element;
-        }
-
-        public void setElement(E element) {
-            this.element = element;
-        }
-
-        public Node<E> getNextElement() {
-            return nextElement;
-        }
-
-        public void setNextElement(Node<E> nextElement) {
-            this.nextElement = nextElement;
-        }
-
-        public Node<E> getPrevElement() {
-            return prevElement;
-        }
-
-        public void setPrevElement(Node<E> prevElement) {
-            this.prevElement = prevElement;
-        }
-
-        @Override
-        public String toString() {
-            return element.toString();
-        }
-
-
-    }
 
 }
