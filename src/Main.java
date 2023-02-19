@@ -2,7 +2,7 @@ import java.util.HashMap;
 
 public class Main {
     public static void main(String[] args) {
-        System.out.println("\n\nMy Array List");
+        System.out.println("\\nMy Array List");
         MyArrayList<Integer> myArrayList = new MyArrayList<>();
         myArrayList.add(100);
         myArrayList.add(200);
