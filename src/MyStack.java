@@ -64,9 +64,9 @@ public class MyStack<E> {
         if (size==0){
             return null;
         } else {
-            Object element = get(size-1);
+
             remove(size-1);
-            return element;
+            return get(size-1);
         }
     }
     @Override
