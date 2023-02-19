@@ -15,6 +15,12 @@ public class MyQueue <E> {
         this.size = 0;
     }
     public void add(E value){
+        if(size == elementData.length){
+            int newSize = (elementData.length * 3)/2 + 1;
+            Object[] tempData;
+            tempData = Arrays.copyOf(elementData, newSize);
+            elementData = tempData;
+        }
         elementData[size]=value;
         size = size + 1;
     }
@@ -53,9 +59,9 @@ public class MyQueue <E> {
         if (size==0){
             return null;
         } else {
-            Object element  = get(0);
+
             remove(0);
-            return element;
+            return get(0);
         }
     }
     @Override

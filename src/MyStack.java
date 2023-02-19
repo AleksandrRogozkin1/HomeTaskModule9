@@ -1,4 +1,6 @@
 import java.util.StringJoiner;
+import java.util.Arrays;
+
 
 public class MyStack<E> {
     private static final int DEFAULT_CAPACITY = 10;
@@ -14,6 +16,12 @@ public class MyStack<E> {
         this.size = 0;
     }
     public void push(E value){
+        if(size == elementData.length){
+            int newSize = (elementData.length * 3)/2 + 1;
+            Object[] tempData;
+            tempData = Arrays.copyOf(elementData, newSize);
+            elementData = tempData;
+        }
         elementData[size]=value;
         size = size + 1;
     }
@@ -44,12 +52,10 @@ public class MyStack<E> {
 
 
     public Object peek(){
-        int     len = size();
-
-        if (len == 0) {
+        if (size==0){
             return null;
-        }else{
-            return get(len - 1);
+        } else {
+            return get(size-1);
         }
     }
 
