@@ -1,5 +1,5 @@
 import java.util.Arrays;
-import java.util.Objects;
+
 import java.util.StringJoiner;
 
 public class MyArrayList <E>  {
@@ -16,6 +16,12 @@ public class MyArrayList <E>  {
         this.size = 0;
     }
     public void add(E value){
+        if(size == elementData.length){
+            int newSize = (elementData.length * 3)/2 + 1;
+            Object[] tempData;
+            tempData = Arrays.copyOf(elementData, newSize);
+            elementData = tempData;
+        }
 
         elementData[size]=value;
         size = size + 1;
@@ -43,9 +49,7 @@ public class MyArrayList <E>  {
         return size;
     }
 
-    public Object getIndex(int index){
-        Objects Objets;
-        Objects.checkIndex(index, size);
+    public Object get(int index){
         return  elementData[index];
     }
 
