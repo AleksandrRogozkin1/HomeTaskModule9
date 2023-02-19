@@ -1,3 +1,5 @@
+import java.util.HashMap;
+
 public class Main {
     public static void main(String[] args) {
         System.out.println("\n\nMy Array List");
@@ -38,6 +40,25 @@ public class Main {
         System.out.println("My Queue after peek = "+myQueue.toString());
         System.out.println("My Queue poll element = "+myQueue.poll());
         System.out.println("My Queue after poll = "+myQueue.toString());
+
+        System.out.println("\n\n\nMy Stack");
+        MyStack<String> myStack=new MyStack<>();
+        myStack.push("1");
+        myStack.push("2");
+        myStack.push("3");
+        myStack.push("4");
+        System.out.println("My Stack = "+myStack.toString());
+        myStack.remove(1);
+        System.out.println("My Stack after remove = "+myStack.toString());
+        System.out.println("My Stack size = "+myStack.size());
+        System.out.println("My Stack peek = "+myStack.peek());
+        System.out.println("My Stack pop = "+myStack.pop());
+        System.out.println("My Stack after pop = "+myStack.toString());
+
+
+
+
+
 
 
 
