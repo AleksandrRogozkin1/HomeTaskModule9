@@ -65,15 +65,15 @@ public class MyStack<E> {
     }
     @Override
     public String toString() {
-        StringJoiner res = new StringJoiner(",");
+        StringJoiner result = new StringJoiner(",");
 
         for (Object element:elementData) {
             if(element!=null) {
-                res.add(element.toString());
+                result.add(element.toString());
             }
         }
 
-        return "{"+res+"}";
+        return "{"+result+"}";
     }
 
 

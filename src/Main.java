@@ -55,13 +55,17 @@ public class Main {
         System.out.println("My Stack pop = "+myStack.pop());
         System.out.println("My Stack after pop = "+myStack.toString());
 
-
-
-
-
-
-
-
+        System.out.println("\n\n\nMy Hash Map");
+        MyHashMap<String,String> hashMap=new MyHashMap<>();
+        hashMap.put("Ukraine","Kyiv");
+        hashMap.put("Poland","Warsaw");
+        hashMap.put("Germany","Berlin");
+        hashMap.put("France","Paris");
+        System.out.println("My Hash Map = "+hashMap.toString());
+        hashMap.remove("Germany");
+        System.out.println("My Hash Map after remove Germany = "+hashMap.toString());
+        System.out.println("My Hash Map size = "+hashMap.size());
+        System.out.println("My Hash Map get value from key= "+hashMap.get("Ukraine"));
 
     }
 }
