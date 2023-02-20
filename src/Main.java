@@ -15,6 +15,8 @@ public class Main {
         System.out.println(myArrayList);
         System.out.println(myArrayList.size());
 
+
+
         System.out.println("\n\n\nMy Linked List");
         MyLinkedList<String> myLinkedList = new MyLinkedList<>();
         myLinkedList.add("Madrid");

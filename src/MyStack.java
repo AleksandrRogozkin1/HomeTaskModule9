@@ -51,20 +51,23 @@ public class MyStack<E> {
     }
 
 
-    public Object peek(){
+    public E peek(){
         if (size==0){
             return null;
-        } else return get(size - 1);
+        } else return (E) get(size - 1);
     }
 
 
-    public Object pop(){
+    public E pop(){
         if (size==0){
             return null;
         } else {
-            Object element = get(size-1);
+            Object firstElement = elementData[size-1];
+            elementData[size-1] = null;
             remove(size-1);
-            return element;
+            size--;
+
+            return (E) firstElement;
         }
     }
     @Override
