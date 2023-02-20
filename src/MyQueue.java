@@ -1,9 +1,10 @@
 import java.util.Arrays;
+import java.util.Queue;
 import java.util.StringJoiner;
 
 public class MyQueue <E> {
     private static final int DEFAULT_CAPACITY = 10;
-    private  Object[] elementData;
+    private  Object [] elementData;
     private int size;
     public MyQueue(){
         this.elementData = new Object[DEFAULT_CAPACITY];
@@ -37,11 +38,11 @@ public class MyQueue <E> {
     private Object get(int index){
         return  elementData[index];
     }
-    public Object peek(){
+    public E peek(){
         if (size==0){
             return null;
         } else {
-            return get(0);
+            return (E) get(0);
         }
     }
     private void remove(int index){
@@ -55,14 +56,17 @@ public class MyQueue <E> {
 
         size = newSize;
     }
-    public Object poll(){
+    public E poll(){
         if (size==0){
             return null;
         } else {
-
+            Object firstElement = elementData[0];
+            elementData[0] = null;
             remove(0);
-            return get(0);
+            size--;
+            return (E) firstElement ;
         }
+
     }
     @Override
     public String toString() {
@@ -76,6 +80,5 @@ public class MyQueue <E> {
 
         return "{"+result+"}";
     }
-
 
 }

@@ -54,9 +54,7 @@ public class MyStack<E> {
     public Object peek(){
         if (size==0){
             return null;
-        } else {
-            return get(size-1);
-        }
+        } else return get(size - 1);
     }
 
 
@@ -64,9 +62,9 @@ public class MyStack<E> {
         if (size==0){
             return null;
         } else {
-
+            Object element = get(size-1);
             remove(size-1);
-            return get(size-1);
+            return element;
         }
     }
     @Override
