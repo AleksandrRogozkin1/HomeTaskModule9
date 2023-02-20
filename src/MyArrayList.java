@@ -49,8 +49,8 @@ public class MyArrayList <E>  {
         return size;
     }
 
-    public Object get(int index){
-        return  elementData[index];
+    public E get(int index){
+        return (E) elementData[index];
     }
 
 
