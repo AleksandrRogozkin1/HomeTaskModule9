@@ -69,5 +69,13 @@ public class Main {
         System.out.println("My Hash Map size = "+hashMap.size());
         System.out.println("My Hash Map get value from key= "+hashMap.get("Ukraine"));
 
+        hashMap.put("Ukraine","Harkiv");
+        System.out.println(hashMap.toString());
+
+
+
+
+
+
     }
 }
